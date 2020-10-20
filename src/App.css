@@ -10,6 +10,12 @@
   background: #fff;
   color: #000;
 }
+.logo {
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
 
 .Navbar__container {
   padding: 27px;

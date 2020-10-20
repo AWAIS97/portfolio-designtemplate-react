@@ -1,24 +1,28 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar'
-import Main from './components/Main'
-import About from './components/About'
-import Services from './components/Services'
-import Portfolio from './components/Portfolio'
-import Contact from './components/Contact'
+import Home from './pages/Home'
+import AboutPage from './pages/AboutPage'
+import ServicesPage from './pages/ServicesPage'
+import PortfolioPage from './pages/PortfolioPage'
+import ContactPage from './pages/ContactPage'
 import Footer from './components/Footer'
-import {BrowserRouter as Router} from 'react-router-dom'
+import ScrollToTop from './components/ScrollToTop'
+import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
 
 function App() {
   return (
     <>
   <Router>
+  <ScrollToTop/>
     <Navbar/>
-    <Main/>
-    <About/>
-    <Services/>
-    <Portfolio/>
-    <Contact/>
+    <Switch> 
+      <Route path='/' exact component={Home}/>
+      <Route path='/about' exact component={AboutPage}/>
+      <Route path='/services' exact component={ServicesPage}/>
+      <Route path='/portfolio' exact component={PortfolioPage}/>
+      <Route path='/contact' exact component={ContactPage}/>
+    </Switch>
     <Footer/>
     </Router>
     </>
